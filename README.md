@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Starter Project
+
+A modern Next.js starter template with authentication, database integration, and UI components pre-configured.
+
+## Key Features
+
+- **Next.js 15**: Built with the latest Next.js (v15.3.2) using App Router
+- **React 19**: Uses React 19 with modern features
+- **Authentication**: Integrated with `better-auth` for authentication flows
+- **Database**: Drizzle ORM with PostgreSQL for type-safe database access
+- **UI Components**: Built with customizable UI components and Lucide React icons
+- **TailwindCSS**: Utility-first CSS framework with custom configuration
+- **TypeScript**: Fully typed codebase for better developer experience
+- **Docker**: Includes Docker Compose setup for development
+- **ESLint**: Configured for code quality and consistency
+- **Turbopack**: Fast refresh with Turbopack in development mode
+
+## Project Structure
+
+```
+├── app/                 # Next.js App Router directory
+│   ├── api/             # API routes
+│   ├── dashboard/       # Dashboard pages
+│   ├── login/           # Authentication pages
+│   ├── globals.css      # Global CSS
+│   └── layout.tsx       # Root layout
+├── components/          # React components
+│   ├── ui/              # UI components
+│   ├── sign-in-social.tsx # Social sign-in component
+│   └── Signout.tsx      # Sign out component
+├── db/                  # Database configuration
+│   ├── index.ts         # DB client export
+│   └── schema.ts        # Drizzle schema definitions
+├── lib/                 # Utility functions and shared logic
+│   ├── auth.ts          # Authentication utilities
+│   ├── auth-client.ts   # Client-side auth helpers
+│   └── utils.ts         # General utilities
+├── public/              # Static assets
+└── middleware.ts        # Next.js middleware
+```
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the repository:**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   ```bash
+   git clone <repository-url>
+   cd nextjs_starter
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```bash
+   pnpm install
+   # or
+   npm install
+   # or
+   yarn install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Set up environment variables:**
+   Create a `.env.local` file based on example configurations.
 
-## Learn More
+4. **Start the development server:**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   pnpm dev
+   # or
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. **Start PostgreSQL with Docker:**
+   ```bash
+   docker-compose up -d
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Available Scripts
 
-## Deploy on Vercel
+- `pnpm dev` - Run development server with Turbopack
+- `pnpm build` - Build the application for production
+- `pnpm start` - Start the production server
+- `pnpm lint` - Run ESLint
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Database
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project uses Drizzle ORM with PostgreSQL. The schema is defined in `db/schema.ts`.
+
+## Authentication
+
+Authentication is implemented using `better-auth` with support for various authentication methods.
+
+## UI Components
+
+The project includes customizable UI components in the `components/ui` directory, built for flexibility and reuse.
